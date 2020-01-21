@@ -1,0 +1,1 @@
+Aquí estará el Query de las tablas de MySQL.
