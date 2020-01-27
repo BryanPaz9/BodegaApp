@@ -34,7 +34,8 @@ foreign key (Id_Empleado) references Empleado_Bodega (Empleado)
 create table Producto(
 Codigo_Producto integer auto_increment,
 Nombre varchar (30) not null,
-Id_Producto Varchar (30) not null
+Id_Producto Varchar (30) not null,
+primary key (Codigo_Producto)
 );
 
 create table Salida(
@@ -62,7 +63,8 @@ create table Proveedor (
 Id_Proveedor integer auto_increment,
 Nombre varchar (40) not null,
 Direccion varchar (40) not null,
-Telefono integer (10)
+Telefono integer (10),
+primary key (ID_Proveedor)
 );
 
 create table Orden_de_Compra(
