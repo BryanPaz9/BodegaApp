@@ -7,6 +7,7 @@ package gt.edu.academik;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -88,6 +89,33 @@ public class Salida implements Serializable {
     public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 79 * hash + Objects.hashCode(this.idSalida);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Salida other = (Salida) obj;
+        if (!Objects.equals(this.idSalida, other.idSalida)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
     
     
 }

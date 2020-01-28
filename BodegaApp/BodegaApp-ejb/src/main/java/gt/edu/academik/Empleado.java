@@ -6,6 +6,7 @@
 package gt.edu.academik;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -67,5 +68,31 @@ public class Empleado implements Serializable {
         this.areaDeTrabajo = areaDeTrabajo;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 31 * hash + Objects.hashCode(this.idEmpleado);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Empleado other = (Empleado) obj;
+        if (!Objects.equals(this.idEmpleado, other.idEmpleado)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
     
 }
